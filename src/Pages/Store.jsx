@@ -106,9 +106,9 @@ const Store = () => {
         <> 
           <div className='max-w-[1100px] relative mx-auto flex justify-between p-2 items-center'>
             <div className='w-full grid grid-cols-4'>
-                <div className='border md:h-[900px] h-[1138px] sticky  top-14 left-0'>
+                <div className='border md:h-[1000px]  h-[1000px] sticky  top-14 left-0'>
                     <div className='text-center bg-slate-600 p-3 text-white'>Category</div>
-                    <ul>
+                    <ul className='md:text-lg text-sm'>
                     <li  className={`p-1 border text-center ${category_slug == undefined && "bg-blue-600 text-white"}`}><Link to= "/store">All</Link></li>
                         {
                             Loader == true?

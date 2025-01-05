@@ -4,7 +4,7 @@ const Context=createContext();
 
 const Contextmain = (props) => {
 
-    const[cart,setcart]=useState([0]);
+    const[cart,setcart]=useState([]);
 
     const carthandler=(prod_details)=>{
 
