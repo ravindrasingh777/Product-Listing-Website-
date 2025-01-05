@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
   return (
-    <div className="bg-gray-100 h-[425px]">
+    <div className="bg-gray-100 md:h-[425px] h-[550px]">
 
 
       {/* About Section */}
