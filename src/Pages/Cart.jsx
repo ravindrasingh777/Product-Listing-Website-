@@ -30,7 +30,7 @@ const Cart = () => {
     return (
         <>
          <div className='max-w-[1100px] my-5 relative mx-auto flex justify-between p-0 items-center'>
-            <table width="100%" cellPadding="10px" className='border mx-auto border-black md:w-full   text-center'>
+            <table cellPadding="10px" className='border mx-auto border-black md:w-full p-3   text-center'>
                 <thead>
                 <tr>
                     <th>S.No</th>
