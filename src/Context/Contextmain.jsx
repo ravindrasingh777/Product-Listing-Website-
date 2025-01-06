@@ -8,8 +8,10 @@ const Contextmain = (props) => {
 
     const carthandler=(prod_details)=>{
        const data=[...cart];
-       data.splice(0,1);
-        setcart([data,prod_details]);
+       const newdata=[...data];
+       newdata.splice(0,1,prod_details)
+       console.log(newdata)
+        setcart([...newdata,prod_details]);
     }
 
     useEffect(
