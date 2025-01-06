@@ -4,14 +4,10 @@ const Context=createContext();
 
 const Contextmain = (props) => {
 
-    const[cart,setcart]=useState([0]);
+    const[cart,setcart]=useState([]);
 
     const carthandler=(prod_details)=>{
-       const data=[...cart];
-       const newdata=[...data];
-       newdata.splice(0,1,prod_details)
-       console.log(newdata)
-        setcart([...newdata,prod_details]);
+      setcart([...cart,prod_details])
     }
 
     useEffect(
@@ -28,10 +24,9 @@ const Contextmain = (props) => {
     useEffect(
         ()=>{
             const lsCart=localStorage.getItem("cart");
-            if(lsCart != ""){
+           
                 setcart(JSON.parse(lsCart))
                 // convert json string to array;
-            }
         },[]
     )
 
