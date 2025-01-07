@@ -1,10 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { stringify } from 'postcss';
+
 const Context=createContext();
 
 const Contextmain = (props) => {
 
-    const[cart,setcart]=useState([0]);
+    const[cart,setcart]=useState([]);
+
+//    console.log(cart.length==0);
 
     const carthandler=(prod_details)=>{
       setcart([...cart,prod_details])
@@ -14,9 +16,9 @@ const Contextmain = (props) => {
         ()=>{
             if(cart.length == 0){
               return
-            }else{
-                localStorage.setItem("cart",JSON.stringify(cart))
             }
+                localStorage.setItem("cart",JSON.stringify(cart))
+            
         },
         [cart]
     )
@@ -24,7 +26,8 @@ const Contextmain = (props) => {
     useEffect(
         ()=>{
             const lsCart=localStorage.getItem("cart");
-            if(lsCart != ""){
+            
+            if(lsCart){
                 setcart(JSON.parse(lsCart))
                 // convert json string to array;
             }

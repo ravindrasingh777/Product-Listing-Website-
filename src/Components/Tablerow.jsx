@@ -1,14 +1,19 @@
-import React, { useState } from "react";
-
+import React, { useContext, useState } from "react";
+import { Context } from "../Context/Contextmain";
 const Tablerow = ({ cartitem, index, removehandler }) => {
   const [Quantity, setQuantity] = useState(1);
-
+ 
+ 
+  
+   
   const inchandler = () => {
-    setQuantity(Quantity + 1);
+    setQuantity(Quantity + 1); 
   };
 
   const dechandler = () => {
     setQuantity(Quantity - 1);
+    
+    
   };
   return (
     <>

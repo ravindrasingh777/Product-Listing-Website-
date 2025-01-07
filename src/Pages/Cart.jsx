@@ -1,51 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import { useContext } from 'react';
-import { Context } from '../Context/Contextmain';
-import Tablerow from '../Components/Tablerow';
+import React, { useEffect, useState } from "react";
+import { useContext } from "react";
+import { Context } from "../Context/Contextmain";
+import Tablerow from "../Components/Tablerow";
 
 const Cart = () => {
+  const { cart } = useContext(Context);
+  const { setcart } = useContext(Context);
+  
 
-    const {cart}=useContext(Context);
-    const{setcart}=useContext(Context);
+  const removehandler = (index) => {
+    const shalowcopy = [...cart];
+    shalowcopy.splice(index, 1);
+    setcart(shalowcopy);
+  };
 
-    const removehandler=(index)=>{
-        const shalowcopy=[...cart];
-        shalowcopy.splice(index,1);
-        setcart(shalowcopy);
 
-    }
+  return (
+    <>
+      <div className="max-w-[1100px] my-5 relative mx-auto flex flex-col justify-between p-0 items-center">
+        <table
+          cellPadding="10px"
+          className="border mx-auto border-black md:w-full sm:w-[200px] p-3   text-center"
+        >
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              Array.isArray(cart)
+              &&
+            cart.map((cartitem, index) => {
+              return (
+                <Tablerow
+                  cartitem={cartitem}
+                  index={index}
+                  removehandler={removehandler}
+                />
+              );
+            })}
+          </tbody>
+        </table>
 
-    return (
-        <>
-         <div className='max-w-[1100px] my-5 relative mx-auto flex justify-between p-0 items-center'>
-            <table cellPadding="10px" className='border mx-auto border-black md:w-full sm:w-[200px] p-3   text-center'>
-                <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                   {
-                    cart?.map(
-                        (cartitem,index)=>{
-                            return(
-                              <Tablerow cartitem={cartitem} index={index} removehandler={removehandler}/> 
-                            )
-                        }
-                    )
-                   }
-                </tbody>
-            </table>
-            </div>
-
-           
-        </>
-    );
-}
+        <h1 className="my-4 text-xl p-3 bg-green-400 w-full">
+          Total:-
+        </h1>
+      </div>
+    </>
+  );
+};
 
 // const Tablerow=({cartitem})=>{
 //     return(
@@ -66,8 +74,5 @@ const Cart = () => {
 //     </tr>
 //     )
 // }
-
-
-
 
 export default Cart;
