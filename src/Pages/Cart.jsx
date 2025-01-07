@@ -49,9 +49,7 @@ const Cart = () => {
           </tbody>
         </table>
 
-        <h1 className="my-4 text-xl p-3 bg-green-400 w-full">
-          Total:-
-        </h1>
+       
       </div>
     </>
   );
