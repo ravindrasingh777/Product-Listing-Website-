@@ -10,8 +10,10 @@ const Cart = () => {
 
   const removehandler = (index) => {
     const shalowcopy = [...cart];
+    // console.log("first",shalowcopy)
     shalowcopy.splice(index, 1);
-    setcart(shalowcopy);
+    // console.log("Second",shalowcopy)
+    setcart([...shalowcopy]);
   };
 
 
