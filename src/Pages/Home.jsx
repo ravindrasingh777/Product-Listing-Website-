@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../Context/Contextmain';
+import { toast } from 'react-toastify';
 const Home = () => {
 
     const {carthandler}=useContext(Context);
@@ -78,7 +79,7 @@ const Home = () => {
                           <div className="p-4  flex flex-col items-center">
                             <h4 className="text-lg text-center font-bold text-gray-800">{item.title}</h4>
                             <p className="mt-1 text-green-600">${item.price}</p>
-                            <button onClick={()=> carthandler({id:item.id, Image:item.thumbnail,price:item.price})} className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Add to Cart</button>
+                            <button onClick={()=> {carthandler({id:item.id, Image:item.thumbnail,price:item.price}), toast.success("Item Added!!")}} className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Add to Cart</button>
                           </div>
                         </div>
                       </div>

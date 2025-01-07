@@ -6,6 +6,7 @@ import { IoGrid } from "react-icons/io5";
 import { FaListUl } from "react-icons/fa6";
 import { useContext } from "react";
 import { Context } from "../Context/Contextmain";
+import { toast } from "react-toastify";
 const Store = () => {
   const inpref = useRef();
 
@@ -225,7 +226,7 @@ const Store = () => {
                                 id: item.id,
                                 Image: item.thumbnail,
                                 price: item.price,
-                              })
+                              }, toast.success("Item Added!!"))
                             }
                             className="border-[1px] w-full rounded bg-blue-600 text-white mt-2 border-black py-1 px-2"
                           >

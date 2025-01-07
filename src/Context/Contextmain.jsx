@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 
 const Context=createContext();
+import { ToastContainer } from 'react-toastify';
 
 const Contextmain = (props) => {
 
@@ -40,6 +41,7 @@ const Contextmain = (props) => {
                 cart,carthandler,setcart
             }
         }>
+            <ToastContainer/>
             {props.children}
         </Context.Provider>
     );

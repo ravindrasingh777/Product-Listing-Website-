@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Context } from "../Context/Contextmain";
 import Tablerow from "../Components/Tablerow";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const { cart } = useContext(Context);
@@ -14,6 +15,7 @@ const Cart = () => {
     shalowcopy.splice(index, 1);
     // console.log("Second",shalowcopy)
     setcart([...shalowcopy]);
+    toast.success("Item Deleted Sucessfully!!")
   };
 
 

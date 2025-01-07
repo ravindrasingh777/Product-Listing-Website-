@@ -6,6 +6,7 @@ import Layout from './Pages/Layout';
 import CartPage from './Pages/Cart';
 import Contact from './Pages/About';
 import Home from './Pages/Home';
+
 const App = () => {
 
   const routes=createBrowserRouter(

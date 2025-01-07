@@ -40,7 +40,7 @@ const Tablerow = ({ cartitem, index, removehandler }) => {
         <td>$ {Math.ceil(cartitem.price * Quantity)}</td>
         <td>
           <button
-            onClick={() => removehandler(index)}
+            onClick={() =>removehandler(index)}
             className="p-1 rounded bg-red-500 text-white "
           >
             Remove
